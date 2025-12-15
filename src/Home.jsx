@@ -6,7 +6,13 @@ import { signOut } from "firebase/auth";
 export default function Home() {
   const { user } = useContext(AuthContext);
 
-  if (!user) return <h2>You are not logged in.</h2>;
+  if (!user) return(
+    <>
+      <h2>You are not logged in.</h2>
+    <a href="/signup">Signup</a>
+    <a href="/login">Login</a>
+    </>
+  );
 
   return (
     <div style={{ padding: 20 }}>
